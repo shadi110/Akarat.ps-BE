@@ -1,8 +1,11 @@
 package com.akarati.ps.entities;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -46,7 +49,8 @@ public class User {
     private Set<RealEstate> favorites = new HashSet<>();
     
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private Set<RealEstate> myRealEstates = new HashSet<>();
+    @JsonManagedReference
+    private List<RealEstate> myRealEstates = new ArrayList<>();
     
     @Enumerated(EnumType.STRING)
     private UserType userType; // OWNER, AGENT, VIEWER
