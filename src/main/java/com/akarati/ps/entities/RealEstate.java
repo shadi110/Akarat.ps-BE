@@ -62,6 +62,7 @@ public class RealEstate {
     
     private String reachingToLocationVideo;
     
+    @Column(length = 2048)
     private String coverPhoto;
     
     private Double size;
