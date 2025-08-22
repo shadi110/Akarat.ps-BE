@@ -25,8 +25,8 @@ public class S3Service {
     private final String secretKey;
 
     public S3Service(
-            @Value("${aws.accessKeyId}") String accessKey,
-            @Value("${aws.secretAccessKey}") String secretKey,
+            @Value("${AWS_ACCESS_KEY_ID}") String accessKey,
+            @Value("${AWS_SECRET_ACCESS_KEY}") String secretKey,
             @Value("${aws.region}") String region,
             @Value("${aws.s3.bucketName}") String bucketName) {
 
