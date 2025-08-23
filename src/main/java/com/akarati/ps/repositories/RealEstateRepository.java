@@ -14,4 +14,5 @@ public interface RealEstateRepository extends JpaRepository<RealEstate, Long> {
     List<RealEstate> findByStatus(RealEstateStatus status);
     List<RealEstate> findByOwnerId(Long ownerId);
     List<RealEstate> findByPriceBetween(Double minPrice, Double maxPrice);
+    List<RealEstate> findByOwner_Id(Long ownerId);
 }
