@@ -79,4 +79,9 @@ public class RealEstateController {
         realEstateService.incrementFavoriteCount(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/owner/{ownerId}")
+    public ResponseEntity<List<RealEstate>> getByUser(@PathVariable Long ownerId) {
+        return ResponseEntity.ok(realEstateService.getRealEstatesByUserId(ownerId));
+    }
 }
