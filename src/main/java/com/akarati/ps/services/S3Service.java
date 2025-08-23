@@ -55,7 +55,8 @@ public class S3Service {
         s3.putObject(putObjectRequest,
                 software.amazon.awssdk.core.sync.RequestBody.fromBytes(file.getBytes()));
 
-        return key; // Return key only; you can generate presigned URL later
+        // Return the full public URL
+        return "https://" + bucketName + ".s3." + region + ".amazonaws.com/" + key;
     }
 
     public String generatePresignedUrl(String key) {
