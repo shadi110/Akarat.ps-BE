@@ -53,6 +53,10 @@ public class RealEstateService {
 				return null;
         // Implementation for search with multiple criteria
     }
+
+	public List<RealEstate> getRealEstatesByUserId(Long userId) {
+    	return realEstateRepository.findByOwner_Id(userId);
+    }
     
     public void incrementFavoriteCount(Long id) {
         RealEstate realEstate = realEstateRepository.findById(id)
