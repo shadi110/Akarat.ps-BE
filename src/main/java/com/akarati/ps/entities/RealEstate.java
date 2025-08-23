@@ -37,8 +37,6 @@ public class RealEstate {
     @Column(nullable = false)
     private Double price;
     
-    @ElementCollection
-    @CollectionTable(name = "real_estate_pictures", joinColumns = @JoinColumn(name = "real_estate_id"))
     private List<String> listOfPictures;
     
     private String video;
