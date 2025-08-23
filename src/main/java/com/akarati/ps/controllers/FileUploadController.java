@@ -20,7 +20,7 @@ public class FileUploadController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            String fileUrl = s3Service.generatePresignedUrl(s3Service.uploadFile(file));
+            String fileUrl = s3Service.uploadFile(file);
             return ResponseEntity.ok(fileUrl);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Upload failed: " + e.getMessage());
@@ -32,7 +32,7 @@ public class FileUploadController {
         List<String> fileUrls = new ArrayList<>();
         try {
             for (MultipartFile file : files) {
-                String fileUrl = s3Service.generatePresignedUrl(s3Service.uploadFile(file));
+                String fileUrl = s3Service.uploadFile(file);
                 fileUrls.add(fileUrl);
             }
             return ResponseEntity.ok(fileUrls);
@@ -44,7 +44,7 @@ public class FileUploadController {
     @PostMapping("/upload/video")
     public ResponseEntity<String> uploadVideo(@RequestParam("file") MultipartFile file) {
         try {
-            String fileUrl = s3Service.generatePresignedUrl(s3Service.uploadFile(file));
+            String fileUrl = s3Service.uploadFile(file);
             return ResponseEntity.ok(fileUrl);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Upload failed: " + e.getMessage());
