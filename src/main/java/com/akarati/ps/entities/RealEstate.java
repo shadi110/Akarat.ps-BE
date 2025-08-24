@@ -52,8 +52,7 @@ public class RealEstate {
     
     private String ownerName;
     
-    @Enumerated(EnumType.STRING)
-    private RealEstateType type;
+    private String type;
     
     @Enumerated(EnumType.STRING)
     private RealEstateStatus status;
