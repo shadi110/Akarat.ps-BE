@@ -12,6 +12,7 @@ import lombok.Data;
 public class Location {
     private String address;
     private String city;
+    private String area;
     private String country;
     private Double latitude;
     private Double longitude;
